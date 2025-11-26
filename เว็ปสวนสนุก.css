@@ -1,14 +1,20 @@
 /* --- ส่วนพื้นหลังหลัก (Desktop) --- */
 .full-bg {
-    /* แนะนำ: เปลี่ยนชื่อไฟล์รูปเป็นภาษาอังกฤษ เช่น bg-web.jfif เพื่อป้องกันบั๊ก */
-    background-image: url("รูป/หน้าเว็ป.jfif");
+    /* ใช้ linear-gradient ซ้อนทับรูป เพื่อทำสีหม่นๆ (แก้ความเข้มที่ 0.5 ได้) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("รูป/หน้าเว็ป.jfif");
+    
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; /* ใช้ fixed สำหรับคอมพิวเตอร์ */
+    
+    /* ลองเปลี่ยนจาก center เป็น top ถ้าอยากให้เห็นส่วนบนของภาพมากกว่า */
+    background-position: center center; 
+    
+    background-attachment: fixed;
     font-family: 'Itim', cursive;
     color: white;
-    min-height: 100vh; /* การันตีความสูงเต็มจอ */
+    
+    /* เพิ่มตรงนี้: การันตีว่าพื้นหลังจะเต็มจอเสมอไม่ว่าจะหน้าจอขนาดไหน */
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -120,4 +126,5 @@
     border-radius: 15px; /* ถ้าต้องการมุมโค้ง */
 
 }
+
 
