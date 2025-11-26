@@ -98,4 +98,20 @@
     height: 100%;
     object-fit: cover; /* ให้ภาพเต็มการ์ดโดยไม่ยืดผิดสัดส่วน */
     border-radius: 15px; /* ถ้าต้องการมุมโค้ง */
+
+}
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+
+    .d, .c {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
 }
