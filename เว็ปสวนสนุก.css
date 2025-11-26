@@ -115,3 +115,8 @@
         font-size: 1.1rem;
     }
 }
+@media (max-width: 600px) {
+    .full-bg {
+        background-attachment: scroll;  /* ปิด parallax เพื่อไม่ให้ภาพซูมแตก */
+        background-size: cover;         /* ให้ภาพพอดีหน้าจอ */
+        background-position: top center;/* จัดตำแหน่งสวยขึ้นในมือถือ */
