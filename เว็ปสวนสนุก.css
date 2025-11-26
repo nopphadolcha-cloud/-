@@ -157,16 +157,35 @@
     box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
 }
 
-/* --- 4. ชุดปุ่มลอยมุมจอ (Floating Action Button) --- */
+/* --- ชุดปุ่มลอยมุมจอ (Floating Action Button) --- */
 .fab-wrapper {
     position: fixed;
-    bottom: 30px;
-    right: 20px;
+    bottom: 30px;      /* ระยะห่างจากขอบล่างจอ */
+    right: 30px;       /* ระยะห่างจากขอบขวาจอ */
     z-index: 9999;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: column; /* ✅ แก้เป็น column เพื่อให้เมนู (div) อยู่เหนือปุ่ม (button) */
+    align-items: center;    /* จัดกึ่งกลางแนวนอน */
+    gap: 0;                 /* ระยะห่างจัดการที่ margin แทน */
+}
+
+/* รายการปุ่มย่อย (ตัวที่เด้งออกมา) */
+.fab-options {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
+    margin-bottom: 15px; /* ✅ ดันให้ห่างจากปุ่มหลักขึ้นไปข้างบน */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* ตั้งต้นให้ต่ำลงมานิดนึง (ซ่อนหลังปุ่ม) */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* ตอนกดเปิด */
+.fab-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* เด้งขึ้นไปตำแหน่งปกติ */
 }
 
 /* ปุ่มหลักตัวใหญ่ */
@@ -191,22 +210,6 @@
     background-color: #ff0000;
 }
 
-/* รายการปุ่มย่อย (ซ่อนไว้ก่อน) */
-.fab-options {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.fab-options.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
 
 /* ดีไซน์ปุ่มย่อย */
 .fab-btn {
