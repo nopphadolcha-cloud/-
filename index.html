@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ธเนศ สวนสนุก</title>
 
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="เว็ปสวนสนุก.css">
 </head>
 
 <body class="full-bg">
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #d30c0c;">
         <div class="container">
             <a href="#" class="navbar-brand">🎡 ธเนศ สวนสนุก</a>
@@ -32,20 +35,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-        <div class="hero d-flex flex-column justify-content-center align-items-center text-center">
-            <h1 class="d">ธเนศ สวนสนุก</h1>
-            <p class="d">ปลดปล่อยความสนุก ไร้ขีดจำกัด!</p>
-            <a href="#" class="btn-ticket">ซื้อตั๋วเข้าชม</a>
-        </div>
-   
+    <div class="hero d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="d">ธเนศ สวนสนุก</h1>
+        <p class="d">ปลดปล่อยความสนุก ไร้ขีดจำกัด!</p>
+        <a href="#" class="btn-ticket">ซื้อตั๋วเข้าชม</a>
+    </div>
 
-    <!-- Attractions Section -->
- 
+    <div class="attractions">
         <div class="container">
             <h2 class="d text-center mb-5">เครื่องเล่นยอดฮิต</h2>
             <div class="row g-4">
-                <!-- 9 Cards -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="รูป/บ้านลม.jfif" alt="บ้านลม">
@@ -76,36 +75,31 @@
                         </div>
                     </div>
                 </div>
+            </div> </div> </div>
 
-        <div class="container">
-    <h2 class="c text-center mb-5">โปรโมชั่น</h2>
-    <div class="row g-4">
-        <!-- แถวที่ 1 -->
-        <div class="col-md-4">
-            <div class="cardd">
-                <a href="หน้าบ้านลม.html">
-                    <img src="รูป/วันเด็ก.png" alt="โปรโมชั่น1" class="img-fluid">
-                </a>
+    <div class="container mb-5">
+        <h2 class="c text-center mb-5">โปรโมชั่น</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="cardd">
+                    <a href="หน้าบ้านลม.html">
+                        <img src="รูป/วันเด็ก.png" alt="โปรโมชั่น1" class="img-fluid rounded">
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="cardd">
-                <a href="หน้าบ้านลม.html">
-                <img src="รูป/สงการนต์.png" alt="โปรโมชั่น2" class="img-fluid">
-                </a>
+            <div class="col-md-4">
+                <div class="cardd">
+                    <a href="หน้าบ้านลม.html">
+                        <img src="รูป/สงการนต์.png" alt="โปรโมชั่น2" class="img-fluid rounded">
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="cardd">
-                <img src="รูป/โปรโมชั่น3.png" alt="โปรโมชั่น3" class="img-fluid">
+            <div class="col-md-4">
+                <div class="cardd">
+                    <img src="รูป/โปรโมชั่น3.png" alt="โปรโมชั่น3" class="img-fluid rounded">
+                </div>
             </div>
-        </div>
-
-
-    
-
-    <!-- Footer -->
-    <footer class="footer text-center py-3">
+        </div> </div> <footer class="footer text-center py-3">
         <div class="container">
             <p>&copy; 2025 ธเนศ สวนสนุก | สวนสนุกที่คุณรัก</p>
             <div class="social-links mt-2">
@@ -117,7 +111,27 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <div class="fab-wrapper">
+        <div class="fab-options" id="fabMenu">
+            <a href="https://line.me/ti/p/..." target="_blank" class="fab-btn btn-line">
+                <i class="bi bi-line"></i>
+                <span class="tooltip-text">แอดไลน์</span>
+            </a>
+            <a href="https://facebook.com/..." target="_blank" class="fab-btn btn-facebook">
+                <i class="bi bi-facebook"></i>
+                <span class="tooltip-text">เฟสบุ๊ค</span>
+            </a>
+            <a href="tel:0812345678" class="fab-btn btn-phone">
+                <i class="bi bi-telephone-fill"></i>
+                <span class="tooltip-text">โทรเลย</span>
+            </a>
+        </div>
+    
+        <button class="main-fab" onclick="toggleFab()">
+            <i class="bi bi-chat-dots-fill" id="fabIcon"></i>
+        </button>
+    </div>
+
     <div class="modal fade" id="myModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -133,7 +147,23 @@
         </div>
     </div>
 
-    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function toggleFab() {
+            const menu = document.getElementById('fabMenu');
+            const icon = document.getElementById('fabIcon');
+            
+            menu.classList.toggle('show');
+    
+            if (menu.classList.contains('show')) {
+                icon.classList.remove('bi-chat-dots-fill');
+                icon.classList.add('bi-x-lg');
+            } else {
+                icon.classList.remove('bi-x-lg');
+                icon.classList.add('bi-chat-dots-fill');
+            }
+        }
+    </script>
 </body>
 </html>
