@@ -1,12 +1,32 @@
-/* Full background */
+/* --- ส่วนพื้นหลังหลัก (Desktop) --- */
 .full-bg {
+    /* แนะนำ: เปลี่ยนชื่อไฟล์รูปเป็นภาษาอังกฤษ เช่น bg-web.jfif เพื่อป้องกันบั๊ก */
     background-image: url("รูป/หน้าเว็ป.jfif");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center center;
+    background-attachment: fixed; /* ใช้ fixed สำหรับคอมพิวเตอร์ */
     font-family: 'Itim', cursive;
     color: white;
+    min-height: 100vh; /* การันตีความสูงเต็มจอ */
+    width: 100%;
+}
+
+/* --- ส่วนแก้ไขสำหรับมือถือ (Mobile Fix) --- */
+@media (max-width: 768px) {
+    .full-bg {
+        /* ยกเลิก fixed ในมือถือ เพื่อแก้ภาพซูมเกินไปและอาการกระตุก */
+        background-attachment: scroll !important;
+        
+        /* จัดตำแหน่งภาพให้เห็นตรงกลางมากขึ้น (หรือเปลี่ยนเป็น center top ถ้าหัวคนอยู่ด้านบน) */
+        background-position: center center !important; 
+        
+        /* มั่นใจว่าภาพครอบคลุมทั้งจอ */
+        background-size: cover !important;
+        
+        /* ป้องกันภาพเลื่อนหลุด */
+        height: 100vh;
+    }
 }
 
 /* Hero */
@@ -100,23 +120,4 @@
     border-radius: 15px; /* ถ้าต้องการมุมโค้ง */
 
 }
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-    }
 
-    .d, .c {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.1rem;
-    }
-}
-@media (max-width: 600px) {
-    .full-bg {
-        background-attachment: scroll;  /* ปิด parallax เพื่อไม่ให้ภาพซูมแตก */
-        background-size: cover;         /* ให้ภาพพอดีหน้าจอ */
-        background-position: top center;/* จัดตำแหน่งสวยขึ้นในมือถือ */
