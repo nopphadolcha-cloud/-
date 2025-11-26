@@ -1,19 +1,21 @@
-/* --- 1. ส่วนพื้นหลังหลัก (Desktop) --- */
 .full-bg {
-    /* ใช้ linear-gradient สีดำจางๆ 40% ทับรูป เพื่อให้ตัวหนังสือสีขาวอ่านง่ายขึ้น */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("รูป/หน้าเว็ป.jfif");
+    /* ใช้ linear-gradient ซ้อนทับรูป เพื่อทำสีหม่นๆ (แก้ความเข้มที่ 0.5 ได้) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("รูป/หน้าเว็ป.jfif");
+    
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; /* คอมพิวเตอร์ใช้ fixed */
+    
+    /* ลองเปลี่ยนจาก center เป็น top ถ้าอยากให้เห็นส่วนบนของภาพมากกว่า */
+    background-position: center center; 
+    
+    background-attachment: fixed;
     font-family: 'Itim', cursive;
     color: white;
+    
+    /* เพิ่มตรงนี้: การันตีว่าพื้นหลังจะเต็มจอเสมอไม่ว่าจะหน้าจอขนาดไหน */
     min-height: 100vh;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
-
 /* --- 2. ส่วนแก้ไขสำหรับมือถือ (Mobile Fix) --- */
 @media (max-width: 768px) {
     .full-bg {
@@ -257,3 +259,4 @@
     opacity: 1;
     transform: translateX(0);
 }
+
