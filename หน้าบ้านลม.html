@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ธเนศ สวนสนุก</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="เว็ปสวนสนุก.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+   <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #d30c0c;">
+    <div class="container">
+        <a href="index.html" class="navbar-brand">🎡 ธเนศ สวนสนุก</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="index.html" class="nav-link">หน้าแรก</a></li>
+                <li class="nav-item"><a href="attractions.html" class="nav-link active">เครื่องเล่น</a></li>
+                <li class="nav-item"><a href="promotion.html" class="nav-link">โปรโมชั่น</a></li>
+                <li class="nav-item"><a href="review.html" class="nav-link">รีวิว</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#myModal">ติดต่อเรา</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>ธเนศ สวนสนุก</h1>
+        <p>ปลดปล่อยความสนุก ไร้ขีดจำกัด!</p>
+        <a href="#" class="btn-ticket">ซื้อตั๋วเข้าชม</a>
+    </div>
+
+    <!-- Attractions Section -->
+    <section class="container my-5" id="attractions">
+        <h2 class="text-center mb-5">เครื่องเล่นยอดฮิต</h2>
+        <div class="row g-4">
+            <!-- แถว 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/บ้านลม.jfif" alt="บ้านลม">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ตักไข่.jfif" alt="ตักไข่">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ยิงปืนโบราณ.jfif" alt="ยิงปืนโบราณ">
+                </div>
+            </div>
+
+            <!-- แถว 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/บ้านลม.jfif" alt="บ้านลม2">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ตักไข่.jfif" alt="ตักไข่2">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ยิงปืนโบราณ.jfif" alt="ยิงปืน2">
+                </div>
+            </div>
+
+            <!-- แถว 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/บ้านลม.jfif" alt="บ้านลม3">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ตักไข่.jfif" alt="ตักไข่3">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="รูป/ยิงปืนโบราณ.jfif" alt="ยิงปืน3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 ธเนศ สวนสนุก | สวนสนุกที่คุณรัก</p>
+            <div class="social-links mt-2">
+                <a href="https://facebook.com/" target="_blank" class="btn btn-primary btn-sm mx-1"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.tiktok.com/" target="_blank" class="btn btn-dark btn-sm mx-1"><i class="bi bi-tiktok"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" class="btn btn-danger btn-sm mx-1"><i class="bi bi-youtube"></i></a>
+                <a href="https://line.me/" target="_blank" class="btn btn-success btn-sm mx-1"><i class="bi bi-line"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark">ติดต่อเรา</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-dark">
+                    <p>📞 โทร: 081-234-5678</p>
+                    <p>💬 Line: @ThanesPark</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
