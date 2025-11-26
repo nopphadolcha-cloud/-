@@ -1,41 +1,32 @@
-/* --- ส่วนพื้นหลังหลัก (Desktop) --- */
+/* --- 1. ส่วนพื้นหลังหลัก (Desktop) --- */
 .full-bg {
-    /* ใช้ linear-gradient ซ้อนทับรูป เพื่อทำสีหม่นๆ (แก้ความเข้มที่ 0.5 ได้) */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("รูป/หน้าเว็ป.jfif");
-    
+    /* ใช้ linear-gradient สีดำจางๆ 40% ทับรูป เพื่อให้ตัวหนังสือสีขาวอ่านง่ายขึ้น */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("รูป/หน้าเว็ป.jfif");
     background-size: cover;
     background-repeat: no-repeat;
-    
-    /* ลองเปลี่ยนจาก center เป็น top ถ้าอยากให้เห็นส่วนบนของภาพมากกว่า */
-    background-position: center center; 
-    
-    background-attachment: fixed;
+    background-position: center center;
+    background-attachment: fixed; /* คอมพิวเตอร์ใช้ fixed */
     font-family: 'Itim', cursive;
     color: white;
-    
-    /* เพิ่มตรงนี้: การันตีว่าพื้นหลังจะเต็มจอเสมอไม่ว่าจะหน้าจอขนาดไหน */
     min-height: 100vh;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- ส่วนแก้ไขสำหรับมือถือ (Mobile Fix) --- */
+/* --- 2. ส่วนแก้ไขสำหรับมือถือ (Mobile Fix) --- */
 @media (max-width: 768px) {
     .full-bg {
-        /* ยกเลิก fixed ในมือถือ เพื่อแก้ภาพซูมเกินไปและอาการกระตุก */
+        /* มือถือ: ยกเลิก fixed เพื่อแก้ภาพซูมแตกและกระตุก */
         background-attachment: scroll !important;
-        
-        /* จัดตำแหน่งภาพให้เห็นตรงกลางมากขึ้น (หรือเปลี่ยนเป็น center top ถ้าหัวคนอยู่ด้านบน) */
-        background-position: center center !important; 
-        
-        /* มั่นใจว่าภาพครอบคลุมทั้งจอ */
+        background-position: center top !important; /* จัดให้เห็นส่วนบนของภาพ */
         background-size: cover !important;
-        
-        /* ป้องกันภาพเลื่อนหลุด */
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
     }
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -43,88 +34,223 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-shadow: 2px 2px 8px black;
+    text-shadow: 2px 2px 8px black; /* เงาตัวหนังสือ */
 }
 
 .btn-ticket {
-    margin-top: 15px;
-    padding: 12px 25px;
+    margin-top: 20px;
+    padding: 12px 30px;
     background: #ff0000;
-    border-radius: 12px;
+    border-radius: 50px; /* ปุ่มมนกลม */
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); /* เงาปุ่มเรืองแสง */
+    transition: transform 0.2s;
 }
+
+.btn-ticket:hover {
+    transform: scale(1.1); /* ขยายเมื่อชี้ */
+    color: white;
+}
+
+/* ป้ายข้อความแดง (.d, .c) */
 .d, .c {
-    display: block;       /* ต้องเป็น block */
-    width: fit-content;   /* กรอบพอดีกับข้อความ */
-    margin: 15px auto;    /* เว้นด้านบน 15px, จัดกลางอัตโนมัติ */
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
     text-align: center;
-    background: rgb(255, 7, 7); /* .c เปลี่ยนสีตามต้องการ */
+    background: #d30c0c;
     border-radius: 12px;
     font-weight: bold;
-    padding: 12px 25px;
+    padding: 10px 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-
-
-/* Attractions */
+/* Attractions (กล่องขาวรองหลังเครื่องเล่น) */
 .attractions {
-    background: rgba(255,255,255,0.9);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
     margin: 30px 15px;
-    padding: 30px 15px;
+    padding: 40px 20px;
     color: black;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .attractions h2 {
     color: #d30c0c;
+    font-weight: bold;
 }
 
+/* Card เครื่องเล่น */
 .card {
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     background: white;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* ลอยขึ้นเมื่อชี้ */
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
 }
 
 .card-info {
-    padding: 15px;
+    padding: 20px;
+}
+
+.card-info h3 {
+    color: #d30c0c;
+    font-size: 1.5rem;
 }
 
 .btn-read-more {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 8px 20px;
     background: #d30c0c;
     color: white;
     border-radius: 8px;
     text-decoration: none;
     margin-top: 10px;
+    transition: background 0.2s;
 }
 
-/* Footer */
-.footer {
-    background: rgba(255, 0, 0, 0.7);
+.btn-read-more:hover {
+    background: #a50000;
     color: white;
-    border-radius: 15px;
 }
 
-.footer .social-links a {
-    margin: 0 5px;
+/* --- 3. Card โปรโมชั่น (.cardd) แก้ไขใหม่ให้สวยงาม --- */
+.cardd {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* เพิ่มเงา */
+    transition: transform 0.3s;
+    background: transparent;
+}
+
+.cardd:hover {
+    transform: scale(1.05); /* ขยายใหญ่ขึ้นเมื่อชี้ */
 }
 
 .cardd img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ให้ภาพเต็มการ์ดโดยไม่ยืดผิดสัดส่วน */
-    border-radius: 15px; /* ถ้าต้องการมุมโค้ง */
-
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
 }
 
+/* Footer */
+.footer {
+    background: linear-gradient(to bottom, rgba(200, 0, 0, 0.9), rgba(150, 0, 0, 1));
+    color: white;
+    border-radius: 20px 20px 0 0;
+    margin-top: 50px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+}
 
+/* --- 4. ชุดปุ่มลอยมุมจอ (Floating Action Button) --- */
+.fab-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ปุ่มหลักตัวใหญ่ */
+.main-fab {
+    width: 60px;
+    height: 60px;
+    background-color: #d30c0c;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 26px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-fab:hover {
+    transform: scale(1.1) rotate(90deg); /* หมุนและขยาย */
+    background-color: #ff0000;
+}
+
+/* รายการปุ่มย่อย (ซ่อนไว้ก่อน) */
+.fab-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.fab-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ดีไซน์ปุ่มย่อย */
+.fab-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    transition: 0.2s;
+}
+
+.fab-btn:hover {
+    transform: scale(1.15);
+    color: white;
+}
+
+/* สีเฉพาะของแต่ละปุ่ม */
+.btn-line { background-color: #06c755; }
+.btn-facebook { background-color: #1877f2; }
+.btn-phone { background-color: #ffca28; }
+
+/* Tooltip (ข้อความลอย) */
+.tooltip-text {
+    position: absolute;
+    right: 60px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(10px);
+}
+
+.fab-btn:hover .tooltip-text {
+    opacity: 1;
+    transform: translateX(0);
+}
